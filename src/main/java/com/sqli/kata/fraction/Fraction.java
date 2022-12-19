@@ -15,14 +15,19 @@ class Fraction {
     public Fraction add(Fraction that) {
         int resultNumerator = numerator * that.denominator + that.numerator * denominator;
         int resultDenominator = that.denominator * denominator;
-        if (resultNumerator != 0 && resultDenominator % resultNumerator == 0) {
+        if (resultNumerator != 0 && isDivisibleBy(resultDenominator, resultNumerator)) {
             return new Fraction(1, resultDenominator / resultNumerator);
-        } else if (resultNumerator % resultDenominator == 0) {
+        } else if (isDivisibleBy(resultNumerator, resultDenominator)) {
             return new Fraction(resultNumerator / resultDenominator, 1);
         } else {
             return new Fraction(resultNumerator, resultDenominator);
         }
     }
+
+    private static boolean isDivisibleBy(int numerator, int denominator) {
+        return numerator % denominator == 0;
+    }
+
 
     @Override
     public boolean equals(Object o) {
