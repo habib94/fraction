@@ -10,9 +10,10 @@ class FractionTest {
   @ParameterizedTest
   @CsvSource({ //
     "0,1,0,1,0,1", //
-    "0,1,1,1,1,1" //
+    "0,1,1,1,1,1", //
+    "1,1,1,1,2,1" //
   })
-  void should_add_two_fractions(int n1, int d1, int n2, int d2, int nx, int dx) {
+  void should_add_fractions(int n1, int d1, int n2, int d2, int nx, int dx) {
     Fraction result = new Fraction(n1, d1).add(new Fraction(n2, d2));
     assertThat(result).isEqualTo(new Fraction(nx, dx));
   }

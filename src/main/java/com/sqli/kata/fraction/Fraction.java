@@ -4,8 +4,8 @@ import java.util.Objects;
 
 class Fraction {
 
-  private int numerator;
-  private int denominator;
+  private final int numerator;
+  private final int denominator;
 
   public Fraction(int numerator, int denominator) {
     this.numerator = numerator;
@@ -13,7 +13,7 @@ class Fraction {
   }
 
   public Fraction add(Fraction that) {
-    return new Fraction(that.numerator, 1);
+    return new Fraction(numerator + that.numerator, 1);
   }
 
   @Override
