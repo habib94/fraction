@@ -12,7 +12,8 @@ class FractionTest {
     "0,1,0,1,0,1", //
     "0,1,1,1,1,1", //
     "1,1,1,1,2,1", //
-    "1,2,1,3,5,6" //
+    "1,2,1,3,5,6", //
+    "1,2,1,2,1,1" //
   })
   void should_add_fractions(int n1, int d1, int n2, int d2, int nx, int dx) {
     Fraction result = new Fraction(n1, d1).add(new Fraction(n2, d2));
