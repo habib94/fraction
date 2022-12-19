@@ -17,6 +17,8 @@ class Fraction {
         int resultDenominator = that.denominator * denominator;
         if (resultNumerator != 0 && resultDenominator % resultNumerator == 0) {
             return new Fraction(1, resultDenominator / resultNumerator);
+        } else if (resultNumerator % resultDenominator == 0) {
+            return new Fraction(resultNumerator / resultDenominator, 1);
         } else {
             return new Fraction(resultNumerator, resultDenominator);
         }
