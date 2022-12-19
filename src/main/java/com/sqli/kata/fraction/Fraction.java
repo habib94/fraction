@@ -13,7 +13,7 @@ class Fraction {
   }
 
   public Fraction add(Fraction that) {
-    return new Fraction(0, 1);
+    return new Fraction(that.numerator, 1);
   }
 
   @Override
