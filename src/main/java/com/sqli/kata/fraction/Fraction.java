@@ -15,8 +15,8 @@ class Fraction {
     public Fraction add(Fraction that) {
         int resultNumerator = numerator * that.denominator + that.numerator * denominator;
         int resultDenominator = that.denominator * denominator;
-        if (resultNumerator == resultDenominator) {
-            return new Fraction(1, 1);
+        if (resultNumerator != 0 && resultDenominator % resultNumerator == 0) {
+            return new Fraction(1, resultDenominator / resultNumerator);
         } else {
             return new Fraction(resultNumerator, resultDenominator);
         }
